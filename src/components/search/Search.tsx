@@ -45,7 +45,10 @@ class Search extends Component {
                     value={this.state.searchValue}
                     clearSearch={this.clearSearchHandler} />
 
-                <SearchResults />
+                {this.state.ships.map(ship => {
+                    return <p>{ship.name}</p>
+                })}
+                
             </>
         )
     }

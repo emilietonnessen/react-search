@@ -23,7 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ search, value, clearSearch, iconT
                     alt="Search Icon" />
             </button>
         </div>
-    )
+    );
 }
 
 export default SearchBar;

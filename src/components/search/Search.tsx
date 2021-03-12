@@ -32,10 +32,10 @@ class Search extends Component<SearchProps> {
 
     componentDidMount() {
         fetch(api)
-        .then(response => response.json())
-        .then(ships => {
-            this.setState({ships: ships});
-        });
+            .then(response => response.json())
+            .then(ships => {
+                this.setState({ships: ships});
+            });
     }
 
     searchHandler = (event: React.ChangeEvent<HTMLInputElement>):void => {
@@ -51,7 +51,7 @@ class Search extends Component<SearchProps> {
             this.setState({
                 searchValue: '',
                 searchFocus: false,
-                searchIcon: magnifyingGlass,
+                searchIcon: magnifyingGlass
             });
         }
     }
@@ -63,7 +63,7 @@ class Search extends Component<SearchProps> {
         if (search.length > 0 ) {
             ships = ships.filter(ship => {
                 return ship.name.toLowerCase().match(search);
-            })
+            });
         }
 
         if(!this.state.searchFocus || search.length === 0) {

@@ -47,7 +47,7 @@ class Search extends Component {
                     iconType={this.state.searchIcon} />
 
                 {this.state.ships.map(ship => {
-                    return <p>{ship.name}</p>
+                    return <SearchResults key={ship.id} name={ship.name} />
                 })}
                 
             </>

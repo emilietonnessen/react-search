@@ -1,7 +1,7 @@
 import { Component } from 'react';
+import { api } from '../../constants/api';
 import magnifyingGlass from '../../assets/magnifying-glass.svg';
 import cross from '../../assets/cross.svg';
-import { api } from '../../constants/api';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
@@ -35,7 +35,7 @@ class Search extends Component<SearchProps> {
         .then(response => response.json())
         .then(ships => {
             this.setState({ships: ships});
-        })
+        });
     }
 
     searchHandler = (event: React.ChangeEvent<HTMLInputElement>):void => {
@@ -83,9 +83,8 @@ class Search extends Component<SearchProps> {
                 })}
                 
             </>
-        )
+        );
     }
-    
 }
 
 export default Search;

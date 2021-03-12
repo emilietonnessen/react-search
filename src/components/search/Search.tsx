@@ -30,7 +30,12 @@ class Search extends Component {
     }
 
     searchHandler =(event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log('Searching now!');
+        console.log(event.target.value);
+        this.setState({
+            searchValue: event.target.value,
+            searchIcon: cross,
+            searchFocus: true,
+        });
     }
 
     clearSearchHandler = () => {

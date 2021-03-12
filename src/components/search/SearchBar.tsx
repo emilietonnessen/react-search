@@ -1,11 +1,11 @@
 interface SearchBarProps {
     search: () => void; // <-- Handler to not return anything, so I used void.
     value: string;
-    clearInput: () => void; // <-- Handler to not return anything, so I used void.
+    clearSearch: () => void; // <-- Handler to not return anything, so I used void.
     iconType: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ search, value, clearInput, iconType }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ search, value, clearSearch, iconType }) => {
     return (
         <div className="search">
             <input 
@@ -15,7 +15,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ search, value, clearInput, iconTy
                 onChange={search}
                 value={value} />
 
-            <button>
+            <button
+                onClick={clearSearch} >
                 <img 
                     src={iconType}
                     alt="Search Icon" />

@@ -9,6 +9,6 @@ The application is styled with Sass and is mobile responsive.
 - Added 'cors' to the server as I was getting an error in console with CORS.
 
 ## What is the extra branch?
-I might have misunderstood the third exercise as I was trying to implement a search function in the url, but ran out of time and knowledge to implement that.
+I might have misunderstood the third exercise as I was trying to implement a search function in the url*, but ran out of time and knowledge to implement that.
 
-(if you would type  this "http://localhost:3000/?search=amundsen") in the url, then you would get "amundsen" in the search field and search result)
+*(if you would type  this "http://localhost:3000/?search=amundsen") in the url, then you would get "amundsen" in the search field and search result)

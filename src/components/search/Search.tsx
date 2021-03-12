@@ -29,11 +29,21 @@ class Search extends Component {
         })
     }
 
+    searchHandler =(event) => {
+
+    }
+
+    clearSearchHandler = () => {
+
+    }
+
     render() {
         return (
             <>
-                <SearchBar />
-                
+                <SearchBar
+                    search={this.searchHandler}
+                     />
+
                 <SearchResults />
             </>
         )

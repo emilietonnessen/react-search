@@ -1,7 +1,7 @@
 interface SearchBarProps {
-    search: () => void; // <-- Handler to not return anything, so I used void.
+    search: (event: React.ChangeEvent<HTMLInputElement>) => void;
     value: string;
-    clearSearch: () => void; // <-- Handler to not return anything, so I used void.
+    clearSearch: () => void;
     iconType: string;
 }
 

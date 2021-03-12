@@ -29,7 +29,7 @@ class Search extends Component {
         })
     }
 
-    searchHandler =(event) => {
+    searchHandler =(event: React.ChangeEvent<HTMLInputElement>) => {
         console.log('Searching now!');
     }
 

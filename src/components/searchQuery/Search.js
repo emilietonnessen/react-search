@@ -8,8 +8,6 @@
 import { Component } from "react";
 import { api } from '../../constants/api';
 import magnifyingGlass from '../../assets/magnifying-glass.svg';
-import cross from '../../assets/cross.svg';
-
 
 class Search extends Component {
     state = {
@@ -19,9 +17,7 @@ class Search extends Component {
     }
 
     componentDidMount() {
-        const params = new URLSearchParams({
-            name: this.state.ships.name
-        });
+        const params = new URLSearchParams();
 
         const url = api + `/${params.toString()}`
         console.log(url);
@@ -36,25 +32,9 @@ class Search extends Component {
                 this.setState({ships: ships});
                 console.log(ships)
             });
-
-
-
-          
-
-
-    }
-
+        }
 
     render () {
-        //const params = new URLSearchParams();
-
-
-
-        
-
-        
-
-
         return (
             <>
                 <div className="search">
@@ -74,14 +54,16 @@ class Search extends Component {
 
 
 
-                <div className="search-result">
-                    Search Result
-                </div>
+                {this.state.ships.map(ship => {
+                    return (
+                        <div className="search-result">
+                            {ship.name}
+                        </div>
+                    )
+                })}
             </>
         )
     }
-
-
 }
 
 export default Search;

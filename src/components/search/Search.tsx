@@ -2,6 +2,8 @@ import { Component } from 'react';
 import magnifyingGlass from '../../assets/magnifying-glass.svg';
 import cross from '../../assets/cross.svg';
 import { api } from '../../constants/api';
+import SearchBar from './SearchBar';
+import SearchResults from './SearchResults';
 
 interface State {
     ships: [];
@@ -30,12 +32,9 @@ class Search extends Component {
     render() {
         return (
             <>
-                <div>
-                    Search Bar here
-                </div>
-                <div>
-                    Search Results here
-                </div>
+                <SearchBar />
+                
+                <SearchResults />
             </>
         )
     }

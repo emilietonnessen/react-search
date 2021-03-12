@@ -12,7 +12,17 @@ interface State {
     searchValue: string;
 }
 
-class Search extends Component {
+interface Ships {
+    id: string;
+    name: string;
+    url: string;
+}
+
+interface SearchProps {
+    ships: [] | Ships[];
+}
+
+class Search extends Component<SearchProps> {
     state: State = {
         ships: [],
         searchFocus: false,
@@ -25,16 +35,14 @@ class Search extends Component {
         .then(response => response.json())
         .then(ships => {
             this.setState({ships: ships});
-            console.log(this.state.ships)
         })
     }
 
-    searchHandler =(event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value);
+    searchHandler = (event: React.InputEvent<HTMLInputElement>): void => {
         this.setState({
             searchValue: event.target.value,
             searchIcon: cross,
-            searchFocus: true,
+            searchFocus: true
         });
     }
 
@@ -43,11 +51,23 @@ class Search extends Component {
             searchValue: '',
             searchFocus: false,
             searchIcon: magnifyingGlass,
-            ships: [],
-        })
+        });
     }
 
     render() {
+        let ships: Ships[] = this.state.ships;
+        let search: string = this.state.searchValue.trim().toLowerCase();
+
+        if (search.length > 0 ) {
+            ships = ships.filter(ship => {
+                return ship.name.toLowerCase().match(search);
+            })
+        }
+
+        if(!this.state.searchFocus || search.length === 0) {
+            ships = [];
+        }
+
         return (
             <>
                 <SearchBar
@@ -56,7 +76,7 @@ class Search extends Component {
                     clearSearch={this.clearSearchHandler}
                     iconType={this.state.searchIcon} />
 
-                {this.state.ships.map(ship => {
+                {ships.map(ship => {
                     return <SearchResults key={ship.id} name={ship.name} />
                 })}
                 

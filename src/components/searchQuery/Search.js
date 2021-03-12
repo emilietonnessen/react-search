@@ -1,13 +1,15 @@
 // I made this to test out the use of query searching as I don't know much, but want to make the use of the rest of my time. I've got 1 hour left when starting on this branch.
 
-// I'm writing this in .js and .tsx while testing and trying the code.
+// I'm writing this in .js and not .tsx while testing and trying the code.
 
 // https://developers.google.com/web/updates/2016/01/urlsearchparams
+// https://www.youtube.com/watch?v=BOQ9mmUd3dI
 
 import { Component } from "react";
 import { api } from '../../constants/api';
 import magnifyingGlass from '../../assets/magnifying-glass.svg';
 import cross from '../../assets/cross.svg';
+
 
 class Search extends Component {
     state = {
@@ -17,31 +19,40 @@ class Search extends Component {
     }
 
     componentDidMount() {
-        fetch(api)
+        const params = new URLSearchParams({
+            name: this.state.ships.name
+        });
+
+        const url = api + `/${params.toString()}`
+        console.log(url);
+
+        /* fetch(url)
+            .then(response => response.text())
+            .then(console.log) */
+
+        fetch(url)
             .then(response => response.json())
             .then(ships => {
                 this.setState({ships: ships});
                 console.log(ships)
             });
+
+
+
+          
+
+
     }
 
 
     render () {
-        const params = new URLSearchParams('q=search+string&version=1&person=Eric');
+        //const params = new URLSearchParams();
 
-        params.get('q') = "search string";
-        params.get('version') = 1;
-        Array.from(params).length = 3;
 
-        // Set
-        params.set('version', 2);
 
-        // Append
-        params.append('person', 'Tim');
-        params.getAll('person') = ['Eric', 'Tim'];
+        
 
-        // Delete
-        params.delete('person');
+        
 
 
         return (

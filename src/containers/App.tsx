@@ -1,4 +1,4 @@
-import Search from "../components/search/Search";
+import Search from "../components/searchQuery/Search.js";
 
 const App = () => <Search />;
 

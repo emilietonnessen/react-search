@@ -43,7 +43,8 @@ class Search extends Component {
                 <SearchBar
                     search={this.searchHandler}
                     value={this.state.searchValue}
-                    clearSearch={this.clearSearchHandler} />
+                    clearSearch={this.clearSearchHandler}
+                    iconType={this.state.searchIcon} />
 
                 {this.state.ships.map(ship => {
                     return <p>{ship.name}</p>

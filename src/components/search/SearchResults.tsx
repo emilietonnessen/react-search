@@ -2,8 +2,8 @@ import React from 'react'
 
 const SearchResults = () => {
     return (
-        <div>
-            This is the search result
+        <div className="search-result">
+            {name}
         </div>
     )
 }

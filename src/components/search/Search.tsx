@@ -38,7 +38,7 @@ class Search extends Component<SearchProps> {
         })
     }
 
-    searchHandler = (event: React.InputEvent<HTMLInputElement>): void => {
+    searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
             searchValue: event.target.value,
             searchIcon: cross,

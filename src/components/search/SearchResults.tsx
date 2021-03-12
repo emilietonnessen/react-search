@@ -1,6 +1,8 @@
-import React from 'react'
+interface SearchResultsProps {
+    name: string;
+}
 
-const SearchResults = () => {
+const SearchResults: React.FC<SearchResultsProps> = ({ name }) => {
     return (
         <div className="search-result">
             {name}
@@ -8,4 +10,4 @@ const SearchResults = () => {
     )
 }
 
-export default SearchResults
+export default SearchResults;

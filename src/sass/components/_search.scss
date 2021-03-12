@@ -26,14 +26,17 @@
     }
 
     &__icon {
-        width: 20%;
-        -webkit-appearance: none;
-        border-radius: 0;
-        outline: 0;
-        border: 0;
-        background-color: transparent;
-        padding: 18px;
-        cursor: pointer;
+        &, &:active {
+            width: 20%;
+            -webkit-appearance: none;
+            border-radius: 0;
+            outline: 0;
+            border: 0;
+            background-color: transparent;
+            padding: 18px;
+            cursor: pointer;
+        }
+        
 
         &:focus {
             // Adding Accessibilty 

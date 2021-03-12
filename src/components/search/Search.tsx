@@ -19,7 +19,7 @@ interface Ships {
 }
 
 interface SearchProps {
-    ships: [] | Ships[];
+    ships?: [] | Ships[];
 }
 
 class Search extends Component<SearchProps> {

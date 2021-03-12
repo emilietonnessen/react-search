@@ -47,11 +47,13 @@ class Search extends Component<SearchProps> {
     }
 
     clearSearchHandler = () => {
-        this.setState({
-            searchValue: '',
-            searchFocus: false,
-            searchIcon: magnifyingGlass,
-        });
+        if (this.state.searchIcon === cross) {
+            this.setState({
+                searchValue: '',
+                searchFocus: false,
+                searchIcon: magnifyingGlass,
+            });
+        }
     }
 
     render() {

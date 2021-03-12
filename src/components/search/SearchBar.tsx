@@ -16,7 +16,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ search, value, clearSearch, iconT
                 value={value} />
 
             <button
-                onClick={clearSearch} >
+                onClick={clearSearch}
+                className="search__icon" >
                 <img 
                     src={iconType}
                     alt="Search Icon" />

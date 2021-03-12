@@ -4,3 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 100px auto;
+    max-width: 300px;
+
+    @media (max-width: 500px) {
+        max-width: 80vw;
+    }
+}

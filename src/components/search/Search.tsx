@@ -42,7 +42,7 @@ class Search extends Component {
             <>
                 <SearchBar
                     search={this.searchHandler}
-                     />
+                    value={this.state.searchValue}
                     clearSearch={this.clearSearchHandler} />
 
                 <SearchResults />

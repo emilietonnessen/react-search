@@ -39,7 +39,12 @@ class Search extends Component {
     }
 
     clearSearchHandler = () => {
-        console.log('Clear the search!');
+        this.setState({
+            searchValue: '',
+            searchFocus: false,
+            searchIcon: magnifyingGlass,
+            ships: [],
+        })
     }
 
     render() {

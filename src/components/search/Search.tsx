@@ -30,11 +30,11 @@ class Search extends Component {
     }
 
     searchHandler =(event) => {
-
+        console.log('Searching now!');
     }
 
     clearSearchHandler = () => {
-
+        console.log('Clear the search!');
     }
 
     render() {
